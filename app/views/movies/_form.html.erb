@@ -1,0 +1,6 @@
+<%= simple_form_for @movie do |f| %>
+  <%= f.input :title, label: 'Title' %>
+  <%= f.input :description , label: 'Description' %>
+  <%= f.input :run_time, label: 'Duration' %>
+  <%= f.button :submit %>
+<% end %>
