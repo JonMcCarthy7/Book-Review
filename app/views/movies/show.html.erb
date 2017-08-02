@@ -2,6 +2,12 @@
 <p><%= @movie.description %></p>
 <p><%= @movie.run_time %></p>
 
-<%= link_to 'Back', movies_path %> |
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Delete', movie_path(@movie), method: :delete, data: {confirm: "Are You Sure?"} %>
+<%= link_to "Back", movies_path %>
+
+
+<% if user_signed_in? %>
+  <% if @movie.user_id == current_user.id %>
+    |<%= link_to "Edit", edit_book_path(@movie) %> |
+    <%= link_to "Delete", book_path(@movie), method: :delete, data: {confirm: "Are You Sure?"} %>
+  <% end %>
+<% end %>

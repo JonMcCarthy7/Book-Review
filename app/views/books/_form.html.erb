@@ -1,5 +1,6 @@
-<%= simple_form_for @book do |f| %>
+<%= simple_form_for @book, :html => { :multipat => true } do |f| %>
   <%= f.input :title, label: "Title" %>
+  <%= select_tag(:category_id, options_for_select(@categories), prompt: "Select a Category") %>
   <%= f.input :description, label: "Discription" %>
   <%= f.input :author, label: "Author" %>
   <%= f.button :submit %>
