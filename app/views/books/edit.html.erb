@@ -3,6 +3,7 @@
 <%= simple_form_for @book, :html => { :multipat => true } do |f| %>
   <%= f.input :title, label: "Title" %>
   <%= f.select :category_id, @categories %>
+  <%= f.file_field :book_img, label: "Book Image" %>
   <%= f.input :description, label: "Discription" %>
   <%= f.input :author, label: "Author" %>
   <%= f.button :submit %>

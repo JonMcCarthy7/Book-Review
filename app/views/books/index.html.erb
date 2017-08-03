@@ -12,7 +12,9 @@
 
 	    <% @books.each do |book| %>
 	      <h1> <%= link_to book.title, book_path(book) %></h1>
-
+				<a href="/books/<%= book.id %>">
+				<%= image_tag book.book_img.url(:book_index) %>
+				</a>
 	    <% end %>
 
 		</div>

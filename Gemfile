@@ -8,6 +8,7 @@ end
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'devise', '~> 4.2'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

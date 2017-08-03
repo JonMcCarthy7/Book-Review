@@ -7,7 +7,7 @@ class BooksController < ApplicationController
       @books = Book.all.order("created_at DESC")
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @books = Book.where(:category_id => @category_id).order("created_at DESC")
+      @books = Book.where(category_id: @category_id).order("created_at DESC")
     end
   end
 
@@ -44,15 +44,15 @@ class BooksController < ApplicationController
       end
     end
 
-    def destory
-      @book.destory
-      redirect_to root_path
-    end
+    def destroy
+  		@book.destroy
+  		redirect_to root_path
+  	end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :description, :author, :category_id)
+    params.require(:book).permit(:title, :description, :author, :category_id, :book_img)
   end
 
   def find_book

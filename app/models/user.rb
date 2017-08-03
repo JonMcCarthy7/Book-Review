@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :reviews
   has_many :books
   has_many :movies
   # Include default devise modules. Others available are:

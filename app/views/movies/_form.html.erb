@@ -1,5 +1,6 @@
 <%= simple_form_for @movie do |f| %>
   <%= f.input :title, label: 'Title' %>
+  <%= select_tag(:movie_genre_id, options_for_select(@movie_genres), prompt: "Selet a Genre") %>
   <%= f.input :description , label: 'Description' %>
   <%= f.input :run_time, label: 'Duration' %>
   <%= f.button :submit %>
